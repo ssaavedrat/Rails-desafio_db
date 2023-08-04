@@ -14,3 +14,8 @@
 # ActiveSupport::Inflector.inflections(:en) do |inflect|
 #   inflect.acronym "RESTful"
 # end
+
+# Add inflection rule for 'serie'
+ActiveSupport::Inflector.inflections(:en) do |inflect|
+  inflect.irregular 'serie', 'series'
+end

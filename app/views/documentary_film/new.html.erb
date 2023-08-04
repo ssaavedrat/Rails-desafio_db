@@ -1,6 +1,6 @@
-<h1 class="my-5">Nueva Película</h1>
-<h2> Ingresa los datos de la nueva película</h2>
-<%= form_with model: @movie, class: "my-5",method: :post do |form|%>
+<h1 class="my-5">Nuevo Documental</h1>
+<h2> Ingresa los datos del nuevo documental</h2>
+<%= form_with model: @documentary_film, class: "my-5",method: :post do |form|%>
   <div class="col-6">
     <div class="my-2">
       <%= form.label :name, "Nombre", class: "form-label" %>
@@ -17,7 +17,8 @@
     <div class="my-3">
       <%= form.submit "Registrar", class: "btn btn-primary" %>
       <%# Botón para regresar a index %>
-      <%= link_to "Cancelar", movie_path, class: "btn btn-secondary" %>
+      <%= link_to "Cancelar", documentary_film_path, class: "btn btn-secondary" %>
     </div>
   </div>
 <% end %>
+

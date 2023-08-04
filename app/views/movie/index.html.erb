@@ -1,2 +1,23 @@
-<h1>Movie#index</h1>
-<p>Find me in app/views/movie/index.html.erb</p>
+<h1 class="mt-5">Películas</h1>
+<%# Enlaces a serie, movie y documentary_film %>
+<nav class="mb-5">
+  <%= link_to 'Películas', movie_path, class:"btn btn-outline-dark my-2 active" %>
+  <%= link_to "Series", serie_path, class: "btn btn-outline-dark my-2" %>
+  <%= link_to "Documentales", documentary_film_path, class: "btn btn-outline-dark my-2" %>
+</nav>
+<%# Button to create a new movie %>
+<%= link_to "Registrar Nueva Película ", movie_new_path, class: "btn btn-primary my-2" %>
+<div class="row row-cols-1 row-cols-md-3 g-4 my-3">
+  <% @movie.each do |movie| %>
+    <div class="col">
+      <div class="card h-100">
+        <h2 class="m-3 h-100 text-center"><%= movie.name %></h2>
+        <div class="card-body">
+          <h3 class="h6 card-title">Sinopsis</h3>
+          <p class="card-text"><%= movie.synopsis %></p>
+          <p class="small">Director: <%= movie.director %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>

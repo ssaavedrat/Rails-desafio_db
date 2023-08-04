@@ -1,0 +1,23 @@
+<h1 class="mt-5">Documentales</h1>
+<%# Enlaces a serie, movie y documentary_film %>
+<nav class="mb-5">
+  <%= link_to 'Películas', movie_path, class:"btn btn-outline-dark my-2" %>
+  <%= link_to "Series", serie_path, class: "btn btn-outline-dark my-2" %>
+  <%= link_to "Documentales", documentary_film_path, class: "btn btn-outline-dark my-2 active" %>
+</nav>
+<%# Button to create a new Documentary Film %>
+<%= link_to "Registrar Nuevo Documental ", documentary_film_new_path, class: "btn btn-primary my-2" %>
+<div class="row row-cols-1 row-cols-md-3 g-4 my-3">
+  <% @documentary_film.each do |documentary| %>
+    <div class="col">
+      <div class="card h-100">
+        <h2 class="m-3 h-100 text-center"><%= documentary.name %></h2>
+        <div class="card-body">
+          <h3 class="h6 card-title">Sinopsis</h3>
+          <p class="card-text"><%= documentary.synopsis %></p>
+          <p class="small">Director: <%= documentary.director %></p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
